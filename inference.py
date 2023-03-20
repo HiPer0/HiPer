@@ -16,12 +16,6 @@ def parse_args():
         help="The directory where the target embeddings are saved.",
     )
     parser.add_argument(
-        "--personalized_emb_dir",
-        type=str,
-        default="text-inversion-model",
-        help="The directory where the source embeddings are saved.",
-    )
-    parser.add_argument(
         "--target_txt",
         type=str,
         help="Target prompt.",
