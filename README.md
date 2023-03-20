@@ -17,7 +17,7 @@
 **Python** 3.8.5 \
 **Torch** 1.11.0 
 ```
-$ conda env create -f environment.yml
+$ conda env create -f environment.yaml
 $ conda activate hiper
 ```
 Our source code relies on [Imagic](https://huggingface.co/spaces/fffiloni/imagic-stable-diffusion).
