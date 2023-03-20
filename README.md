@@ -25,21 +25,21 @@ Our source code relies on [Imagic](https://huggingface.co/spaces/fffiloni/imagic
 ## Optimize text embedding
 In order to optimize the personalized embedding for a source image, run:
 ```
-python train_emb.py --input_image '/path/to/image' --target_text 'a jumping dog' --source_text 'a standing dog' \
---n_tokens '5' --output_dir '/path/for/save' --emb_learning_rate=5e-3 --emb_train_steps=1000
+python train.py --pretrained_model_name 'CompVis/stable-diffusion-v1-4' --input_image 'dog2_standing.png' --target_text 'a sitting dog' --source_text 'a standing dog' --output_dir './standing_dog' --n_hiper=5 --emb_learning_rate=5e-3 --emb_train_steps=1200 --seed 200000
 ```
 + The text prompt for inference is given to the flag ```--target_text```
 + The text prompt describing a source image is given in the flag ```--source_text```
-+ The flag ```--n_tokens``` controls the number of tokens to be personalized
++ The flag ```--n_hiper``` controls the number of tokens to be personalized
 + The flag ```--emb_train_steps``` controls the number of iterations for optimization
 
 ## Inference with target text
 In order to edit the source image using the personalized embedding, run:
 ```
-python inference.py --target_text 'a jumping dog' --personalized_emb_dir '/path/to/personalized/embedding' --n_tokens '5'
+python inference.py --pretrained_model_name 'CompVis/stable-diffusion-v1-4' --inference_train_step 1000 --target_txt 'a sitting dog' --output_dir './standing_dog' --seed 111111 --image_num 10
 ```
 + The text prompt for inference is given to the flag ```--target_text```
-+ The flag ```--n_tokens``` controls the number of tokens to be personalized
++ The flag ```--inference_train_step``` controls which the personalized embedding will be loaded
++ The flag ```--image_num``` controls the number of generated image
 
 ## BibTeX
 ```
