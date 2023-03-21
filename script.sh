@@ -5,7 +5,7 @@ TGTTXT='a sitting dog'
 ##training
 python train.py \
 --pretrained_model_name 'CompVis/stable-diffusion-v1-4' \
---input_image 'dog2_standing.png' \
+--input_image 'dog.png' \
 --target_text "$TGTTXT" \
 --source_text "$SRCTXT" \
 --output_dir "$OUT" \
