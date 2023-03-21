@@ -25,7 +25,7 @@ Our source code relies on [Imagic](https://huggingface.co/spaces/fffiloni/imagic
 ## Optimize text embedding
 In order to optimize the personalized embedding for a source image, run:
 ```
-python train.py --pretrained_model_name 'CompVis/stable-diffusion-v1-4' --input_image 'dog2_standing.png' --target_text 'a sitting dog' --source_text 'a standing dog' --output_dir './standing_dog' --n_hiper=5 --emb_learning_rate=5e-3 --emb_train_steps=1200 --seed 200000
+python train.py --pretrained_model_name 'CompVis/stable-diffusion-v1-4' --input_image 'dog2_standing.png' --target_text 'a sitting dog' --source_text 'a standing dog' --output_dir './standing_dog' --n_hiper 5 --emb_learning_rate 5e-3 --emb_train_steps 1200 --seed 200000
 ```
 + The text prompt for inference is given to the flag ```--target_text```
 + The text prompt describing a source image is given in the flag ```--source_text```
